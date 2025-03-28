@@ -24,6 +24,5 @@ func (h *UserHandler) AddUserHandler(c *gin.Context) {
 		return
 	}
 
-	h.service.AddUser(user)
-	c.Status(http.StatusCreated)
+	c.JSON(http.StatusCreated, user)
 }

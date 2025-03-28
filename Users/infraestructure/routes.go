@@ -12,7 +12,7 @@ func SetupRoutes() *gin.Engine {
 	repo := NewInMemomyUserRepository()
 	userService := application.NewUserService(repo)
 	handler := NewUserService(userService)
-
+	
 	r.POST("/addPerson", handler.AddUserHandler)
 	r.GET("/NewPersonAdded", ShortPollingHandler(userService))
 	r.GET("/CountGender", LongPollingHandler(userService))
