@@ -11,11 +11,11 @@ func main() {
 	r := infraestructure.SetupRoutes()
 	r.Use(cors.Default())
 	r.Use(cors.New(cors.Config{
-        AllowOrigins:     []string{"http://Local:5500"},
-        AllowMethods:     []string{"GET", "POST", "PUT", "DELETE"},
-        AllowHeaders:     []string{"Origin", "Content-Type", "Accept"},
-        AllowCredentials: true,
-    }))
+		AllowOrigins:     []string{"http://127.0.0.1:5500"},
+		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE"}, 
+		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
+		AllowCredentials: true,
+	}))
 
 	log.Println("Servidor corriendo en :8080")
 
