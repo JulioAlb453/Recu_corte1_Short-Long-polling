@@ -24,7 +24,7 @@ func LongPollingHandler(service *application.UserService)  gin.HandlerFunc{
 		case users := <-client:
 			c.JSON(http.StatusOK, users)
 		case <-time.After(1 * time.Second):
-			c.JSON(http.StatusNoContent, nil) // No hay cambios en 1s
+			c.JSON(http.StatusNoContent, nil) 
 		}
 
 		mu.Lock()
