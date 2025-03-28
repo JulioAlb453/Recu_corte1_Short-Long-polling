@@ -14,6 +14,8 @@ func SetupRoutes() *gin.Engine {
 	handler := NewUserService(userService)
 
 	r.POST("/addPerson", handler.AddUserHandler)
+	r.GET("/NewPersonAdded", ShortPollingHandler(userService))
+	r.GET("/CountGender", LongPollingHandler(userService))
 
 	return r
 }
