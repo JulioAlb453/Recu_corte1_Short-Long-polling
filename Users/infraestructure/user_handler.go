@@ -16,7 +16,7 @@ func NewUserService(service *application.UserService) *UserHandler {
 	return &UserHandler{service: service}
 }
 
-func (h *UserHandler) AddUser(c *gin.Context) {
+func (h *UserHandler) AddUserHandler(c *gin.Context) {
 	var user domain.User
 
 	if err := c.ShouldBindJSON(&user); err != nil {
